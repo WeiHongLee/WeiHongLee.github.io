@@ -1,0 +1,21 @@
+# main links links
+main:
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Projects"
+    url: /projects/    
+
+ # - title: "Teaching"
+ #   url: /teaching/
+ 
+  - title: "Fitness & Reading"
+    url: /fitness/
+        
+  #- title: "Blog Posts"
+  #- title: "Fitness"
+  #  url: /year-archive/
+    
+  - title: "CV"
+    url: /cv/
+    

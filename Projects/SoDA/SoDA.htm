@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en" class="SYSU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+​    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>SoDA</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="./Basic/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./Basic/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="./Basic/font-awesome.min.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="./Basic/starter-template.css" rel="stylesheet">
+    <!-- My own style -->
+    <link href="./Basic/project_style.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="./Basic/css" rel="stylesheet" type="text/css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script async="" src="./Basic/analytics.js"></script><script src="./Basic/ie-emulation-modes-warning.js"></script>
+    <!-- Google analytics snippet -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-96369953-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+<!--     <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-96369953-3', 'auto');
+      ga('send', 'pageview');
+    </script> -->
+
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+
+    <div class="container">
+      <div class="row">
+        <div><h1>One-pass Person Re-identification by <br>Sketch Online Discriminant Analysis</h1></div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div><p class="lead"><a href="https://weihonglee.github.io">Wei-Hong Li</a>, Zhuowei Zhong </a>, <a href="http://www.isee-ai.cn/~zhwshi/index.html">Wei-Shi Zheng</a><sup>&#9993</sup></p></div>
+        <div><p class="university">Sun Yat-Sen University</p></div>
+        <div><p class="contacts">liweih3@mail2.sysu.edu.cn, zhongzhw6@gmail.com, zhwshi@mail.sysu.edu.cn</p></div>  
+        <div><p class="abstract text-left"><small>&#9993 Corresponding author.</small></p></div>
+        &nbsp;
+    	<div><img class="img-responsive center-block" alt="pipeline picture" src="./Basic/dataStream.pdf" style="width:95%"></div>
+        &nbsp;     
+        <div><p class="abstract text-left">Person re-identification (re-id) is to match people across disjoint camera views in a multi-camera system, and re-id has been an important technology applied in smart city in recent years. However, the majority of existing person re-id methods are not designed for processing sequential data in an online way. This ignores the real-world scenario that person images detected from multi-cameras system are coming sequentially. While there is a few work on discussing online re-id, most of them require considerable storage of all passed data samples that have been ever observed, and this could be unrealistic for processing data from a large camera network. In this work, we present an onepass person re-id model that adapts the re-id model based on each newly observed data and no passed data are directly used for each update. More specifically, we develop an Sketch online Discriminant Analysis (SoDA) by embedding sketch processing into Fisher discriminant analysis (FDA). SoDA can efficiently keep the main data variations of all passed samples in a low rank matrix when processing sequential data samples, and estimate the approximate within-class variance (i.e. within-class covariance matrix) from the sketch data information. We provide theoretical analysis on the effect of the estimated approximate within-class covariance matrix. In particular, we derive upper and lower bounds on the Fisher discriminant score (i.e. the quotient between between-class variation and within-class variation after feature transformation) in order to investigate how the optimal feature transformation learned by SoDA sequentially approximates the offline FDA that is learned on all observed data. Extensive experimental results have shown the effectiveness of our SoDA and empirically support our theoretical analysis.</p>
+        </div>  
+        &nbsp; 
+      
+      <div><p class="abstract text-left"><b>Acknowledgments.</b> <I>We thank Ancong Wu and Yingcong Chen for useful feedback and suggestions</I>.</p>
+        </div> 
+      <div>
+      &nbsp;
+      </div>
+      
+        <div>
+          <p class="pointers" style="text-align:left">▸ <a href="https://arxiv.org/abs/1711.03368">Paper</a> <small>[bibtex] </small></p> 
+        </div>
+<!--         <div id="paper">
+          <p class="pointers" style="text-align:left">&#9656 <a href="./stuff/poster_staple.pdf">Poster <i class="fa fa-file-pdf-o"></i> </a></p> 
+        </div>   -->     
+        &nbsp;
+        <div>
+          <p class="pointers" style="text-align:left">▸ <a href="https://github.com/WeiHongLee/SoDA/blob/master/README.md">Code</a> </p>
+        </div>
+        &nbsp;        
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+      <div>
+      &nbsp;
+      </div>
+      <div>
+      &nbsp;
+      </div>
+      <div>
+      &nbsp;
+      </div>
+      <div>
+      &nbsp;
+      </div>
+      <div>
+      &nbsp;
+      </div>
+<!--           <p class="pointers" style="text-align:left">&#9656 <a href="./stuff/Staple_website_results.zip">Results (coming soon) <i class="fa fa-file-zip-o"> </i></a><small></p>
+ -->    </div>
+
+
+<!-- <span id="buffer-extension-hover-button" style="display: none;position: absolute;z-index: 8675309;width: 100px;height: 25px;background-image: url(chrome-extension://noojglkidnpfjbincgijbaiedldjfbhh/data/shared/img/buffer-hover-icon@1x.png);background-size: 100px 25px;opacity: 0.9;cursor: pointer;"></span></body></html> -->
+</small></small></body></html>
