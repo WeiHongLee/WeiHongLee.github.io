@@ -1,0 +1,7 @@
+@inproceedings{li2019learning,
+  title={Learning to learn relation for important people detection in still images},
+  author={Li, Wei-Hong and Hong, Fa-Ting and Zheng, Wei-Shi},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={5003--5011},
+  year={2019}
+}

@@ -1,0 +1,6 @@
+@inproceedings{hong2020semi,
+title={Learning to Detect Important People in Unlabelled Images for Semi-supervised Important People Detection},
+author={Hong, Fa-Ting and Li, Wei-Hong and Zheng, Wei-Shi},
+booktitle={Proceedings of the IEEE International Conference on Computer Vision and Pattern Recognition},
+year={2020}
+}
