@@ -1,7 +1,0 @@
-@inproceedings{li2018personrank,
-  title={PersonRank: Detecting Important People in Images},
-  author={Li, Wei-Hong and Li, Benchao and Zheng, Wei-Shi},
-  booktitle={IEEE International Conference on Automatic Face \& Gesture Recognition (FG)},
-  year={2018},
-  organization={IEEE}
-}
