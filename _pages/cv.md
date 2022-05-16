@@ -28,6 +28,10 @@ Education
   * Thesis: Tracking Multiple Targets in Group Activity Scene.
   * Supervised by Prof. [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html) from January 2015 to May 2015.
 
+Profressional Activities
+======
+* Reviewer at ICCV'21, CVPR'22, ECCV'22, Neurips'22
+
 Teaching
 ======
 * Teaching Assistant at the University of Edinburgh
