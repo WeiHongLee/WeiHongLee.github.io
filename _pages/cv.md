@@ -34,7 +34,7 @@ Services
   * ICCV 2021
   * CVPR 2022 
   * ECCV 2022 
-  * Neurips 2022
+  * NeurIPS 2022
 
 Teaching
 ======
