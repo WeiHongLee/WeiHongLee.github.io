@@ -40,6 +40,20 @@ Services
   * CVPR 2022 
   * ECCV 2022 
   * NeurIPS 2022
+  * TMM
+  * [Workshop on What is Motion for?](https://what-is-motion-for.github.io)
+
+* Workshop Organization
+  * [Universal Representations for Computer Vision Workshop](https://sites.google.com/view/universalrepresentations) at BMVC 2022
+
+Selected Awards
+======
+* CVPR 2022 Best Paper Finalist (33/8161)
+* Informatics Global PhD Scholarship (IGPS) at University of Edinburgh
+* Academic Excellence Award at Sun Yat-Sen University (2011-2018)
+* Best Paper Award at ICIG 2017
+* First and Second Prize at Chinese RoboCup Competition (2013-2014)
+
 
 Teaching
 ======
@@ -47,7 +61,6 @@ Teaching
   * Image and Vision Computing (IVC), 2018-19
   * [Machine Learning Practical (MLP), 2018-19](http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2018.html)
   * [Machine Learning Practical (MLP), 2019-20](http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2019.html)
-  <!-- * Image and Vision Computing (IVC), 2020-21 -->
   * [Machine Learning Practical (MLP), 2020-21](http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2019.html)
 
 [Curriculum Vitae](https://WeiHongLee.github.io/CV/CV.pdf)
