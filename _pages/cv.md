@@ -49,7 +49,7 @@ Services
 Selected Awards
 ======
 * CVPR 2022 Best Paper Finalist (33/8161)
-* Informatics Global PhD Scholarship (IGPS) at University of Edinburgh
+* IGS PhD scholarship at University of Edinburgh
 * Academic Excellence Award at Sun Yat-Sen University (2011-2018)
 * Best Paper Award at ICIG 2017
 * First and Second Prize at Chinese RoboCup Competition (2013-2014)
