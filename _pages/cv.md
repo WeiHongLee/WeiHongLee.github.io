@@ -12,7 +12,7 @@ redirect_from:
 
 
 
-Education
+Education & Experience
 ======
 * August 2022 - present,
   * Research Associate (postdoc) at the University of Edinburgh (UK).
@@ -33,7 +33,7 @@ Education
   * Thesis: Tracking Multiple Targets in Group Activity Scene.
   * Supervised by [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html) from January 2015 to May 2015.
 
-Services
+Services & Organization
 ======
 * Paper Review
   * ICCV 2021

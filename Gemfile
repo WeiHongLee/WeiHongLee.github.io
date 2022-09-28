@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 gem "eventmachine"
 gem "minimal-mistakes-jekyll"
 gem "jekyll-scholar"
