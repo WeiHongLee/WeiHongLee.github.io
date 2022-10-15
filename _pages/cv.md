@@ -16,32 +16,29 @@ Education & Experience
 ======
 * August 2022 - present,
   * Research Associate (postdoc) at the University of Edinburgh (UK).
-  * Working with [Hakan Bilen](http://homepages.inf.ed.ac.uk/hbilen/index.html).
+  * Working with Dr. [Hakan Bilen](http://homepages.inf.ed.ac.uk/hbilen/index.html).
 * September 2018 – August 2022, 
   * PhD student at the University of Edinburgh (UK).
-  * Supervised by [Hakan Bilen](http://homepages.inf.ed.ac.uk/hbilen/index.html).
+  * Supervised by Dr. [Hakan Bilen](http://homepages.inf.ed.ac.uk/hbilen/index.html).
   * Thesis: Learning Universal Representations Across Tasks and Domains.
-  * Examiner: [Amir Zamir](https://vilab.epfl.ch/zamir/), [Laura Sevilla](https://laurasevilla.me).
+  * Examiner: Dr. [Amir Zamir](https://vilab.epfl.ch/zamir/), Dr. [Laura Sevilla](https://laurasevilla.me).
 * October 2017 – March 2018, 
   * Visiting student at the Queen Mary University of London (UK).
-  * Supervised by [Sean Gong](http://www.eecs.qmul.ac.uk/~sgg/) and [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html)
+  * Supervised by Prof. [Sean Gong](http://www.eecs.qmul.ac.uk/~sgg/) and Prof. [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html)
 * June 2015 – July 2018,
   * M.Sc. in the School of Electronics and Information Technology at the Sun Yat-sen University (one of the top ten universities in China). 
-  * Supervised by [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html).
+  * Supervised by Prof. [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html).
 * September 2011 – June 2015,  GPA 3.8/4.0,
   * B.Sc. in Intelligence Science and Technology, Sun Yat-sen University
   * Thesis: Tracking Multiple Targets in Group Activity Scene.
-  * Supervised by [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html) from January 2015 to May 2015.
+  * Supervised by Prof. [Wei-Shi Zheng](http://www.isee-ai.cn/~zhwshi/index.html) from January 2015 to May 2015.
 
 Services & Organization
 ======
 * Paper Review
-  * ICCV 2021
-  * CVPR 2022 
-  * ECCV 2022 
-  * NeurIPS 2022
-  * TMM
-  * [Workshop on What is Motion for?](https://what-is-motion-for.github.io)
+  * Conference: ICCV'21, CVPR'22, ECCV'22, NeurIPS'22
+  * Journal/Transaction: TMM, TPAMI
+  * Workshop: [WIMF](https://what-is-motion-for.github.io)
 
 * Workshop Organization
   * [Universal Representations for Computer Vision Workshop](https://sites.google.com/view/universalrepresentations) at BMVC 2022
