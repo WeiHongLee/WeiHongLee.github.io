@@ -38,7 +38,7 @@ Services & Organization
 * Paper Review
   * Conference: ICCV'21, CVPR'22, ECCV'22, NeurIPS'22
   * Journal/Transaction: TMM, TPAMI
-  * Workshop: [WIMF](https://what-is-motion-for.github.io)
+  * Workshop: [WIMF'22](https://what-is-motion-for.github.io)
 
 * Workshop Organization
   * [Universal Representations for Computer Vision Workshop](https://sites.google.com/view/universalrepresentations) at BMVC 2022
