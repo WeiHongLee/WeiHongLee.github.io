@@ -20,7 +20,7 @@ redirect_from:
   <li>September 2018 – August 2022,</li>
   <ul>
     <li>PhD student at the University of Edinburgh (UK).</li>
-    <li>Supervised by Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html">Hakan Bilen</a>.</li>
+    <li>Supervised by Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html">Hakan Bilen</a> and Prof. <a href="https://homepages.inf.ed.ac.uk/thospeda/">Timothy Hospedales</a>.</li>
     <li>Thesis: Learning Universal Representations Across Tasks and Domains.</li>
     <li>Examiner: Dr. <a href="https://vilab.epfl.ch/zamir/">Amir Zamir</a>, Dr. <a href="https://laurasevilla.me">Laura Sevilla</a>.</li>
   </ul>
