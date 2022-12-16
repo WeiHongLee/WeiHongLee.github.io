@@ -21,7 +21,7 @@ redirect_from:
   <ul>
     <li>PhD student at the University of Edinburgh (UK).</li>
     <li>Supervised by Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html">Hakan Bilen</a> and Prof. <a href="https://homepages.inf.ed.ac.uk/thospeda/">Timothy Hospedales</a>.</li>
-    <li>Thesis: Learning Universal Representations Across Tasks and Domains.</li>
+    <li>Thesis: <a href="https://era.ed.ac.uk/handle/1842/39625">Learning Universal Representations Across Tasks and Domains</a>.</li>
     <li>Examiner: Dr. <a href="https://vilab.epfl.ch/zamir/">Amir Zamir</a>, Dr. <a href="https://laurasevilla.me">Laura Sevilla</a>.</li>
   </ul>
   <li>October 2017 – March 2018,</li>
