@@ -48,8 +48,8 @@ redirect_from:
 <ul style="font-size:85%">
   <li>Paper Review</li>
   <ul>
-    <li>Conference: ICCV'21, CVPR'22, ECCV'22, NeurIPS'22</li>
-    <li>Journal/Transaction: TMM, TPAMI</li>
+    <li>Conference: ICCV'21, CVPR'22'23, ECCV'22, NeurIPS'22, ICML'23</li>
+    <li>Journal/Transaction: TMM, TPAMI, Machine Learning</li>
     <li>Workshop: <a href="https://what-is-motion-for.github.io">WIMF'22</a></li>
   </ul>
   <li>Workshop Organization</li>
