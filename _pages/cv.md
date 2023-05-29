@@ -32,6 +32,7 @@ redirect_from:
   <li>June 2015 – July 2018,</li>
   <ul>
     <li>M.Sc. in the School of Electronics and Information Technology at the Sun Yat-sen University (one of the top ten universities in China).</li>
+    <li>Thesis: Important People Detection and Cross-Camera Pedestrian Tracking.</li>
     <li>Supervised by Prof. <a href="http://www.isee-ai.cn/~zhwshi/index.html">Wei-Shi Zheng</a>.</li>
   </ul>
   <li>September 2011 – June 2015,  GPA 3.8/4.0,</li>
