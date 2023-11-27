@@ -63,9 +63,9 @@ redirect_from:
 <div>
 <b style="font-size:120%">Selected Awards</b>
 <ul style="font-size:85%">
-  <li>The Sullivan Doctoral Thesis Prize Runner-Up (2019-2023) by The British Machine Vision Association</li>
+  <li>The BMVA Sullivan Doctoral Thesis Prize Runner-Up (2019-2023)</li>
   <li>CVPR 2022 Best Paper Finalist (33/8161)</li>
-  <li>Top Reviewer for Neurips'23</li>
+  <li>Top Reviewer at Neurips'23</li>
   <li>IGS PhD scholarship at University of Edinburgh</li>
   <li>Academic Excellence Award at Sun Yat-Sen University (2011-2018)</li>
   <li>Best Paper Award at ICIG 2017</li>
