@@ -12,9 +12,14 @@ redirect_from:
 <div>
 <b style="font-size:120%">Education & Experience</b>
 <ul style="font-size:85%">
-  <li>August 2022 - present,</li>
+  <li>January 2024 - Present,</li>
   <ul>
-    <li>Research Associate (postdoc) at the University of Edinburgh (UK).</li>
+    <li>Postdoctoral Fellow at MMLab, CUHK.</li>
+    <li>Working with Dr. <a href="https://xyue.io">Xiangyu Yue</a>.</li>
+  </ul>
+  <li>August 2022 - October 2023,</li>
+  <ul>
+    <li>Postdoctoral Fellow at the University of Edinburgh (UK).</li>
     <li>Working with Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html">Hakan Bilen</a>.</li>
   </ul>
   <li>September 2018 – August 2022,</li>
@@ -49,7 +54,7 @@ redirect_from:
 <ul style="font-size:85%">
   <li>Paper Review</li>
   <ul>
-    <li>Conference: ICCV'21'23, CVPR'22'23'24, ECCV'22, NeurIPS'22'23, ICML'23, ICLR'24</li>
+    <li>Conference: ICCV'21'23, CVPR'22'23'24, ECCV'22'24, NeurIPS'22'23, ICML'23'24, ICLR'24</li>
     <li>Journal/Transaction: TMM, TPAMI, Machine Learning</li>
     <li>Workshop: <a href="https://what-is-motion-for.github.io">WIMF'22</a></li>
   </ul>
