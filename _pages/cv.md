@@ -68,7 +68,7 @@ redirect_from:
 <div>
 <b style="font-size:120%">Selected Awards</b>
 <ul style="font-size:85%">
-  <li>The BMVA Sullivan Doctoral Thesis Prize Runner-Up (2019-2023)</li>
+  <li>The BMVA Sullivan Doctoral Thesis Prize Runner-Up</li>
   <li>CVPR 2022 Best Paper Finalist (33/8161)</li>
   <li>Top Reviewer at Neurips'23</li>
   <li>IGS PhD scholarship at University of Edinburgh</li>
