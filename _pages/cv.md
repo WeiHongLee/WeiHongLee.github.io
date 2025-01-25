@@ -55,7 +55,7 @@ redirect_from:
   <li>Paper Review</li>
   <ul>
     <li>Conference: ICCV'21'23, CVPR'22'23'24, ECCV'22'24, NeurIPS'22'23, ICML'23'24, ICLR'24</li>
-    <li>Journal/Transaction: TMM, TPAMI, Machine Learning</li>
+    <li>Journal/Transaction: TPAMI, IJCV, TMLR, Machine Learning, TMM</li>
     <li>Workshop: <a href="https://what-is-motion-for.github.io">WIMF'22</a></li>
   </ul>
   <li>Workshop Organization</li>
@@ -70,7 +70,7 @@ redirect_from:
 <ul style="font-size:85%">
   <li>The BMVA Sullivan Doctoral Thesis Prize Runner-Up</li>
   <li>CVPR 2022 Best Paper Finalist (33/8161)</li>
-  <li>Top Reviewer at Neurips'23</li>
+  <li>Top Reviewer at Neurips'23'24</li>
   <li>IGS PhD scholarship at University of Edinburgh</li>
   <li>Academic Excellence Award at Sun Yat-Sen University (2011-2018)</li>
   <li>Best Paper Award at ICIG 2017</li>
