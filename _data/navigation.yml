@@ -8,8 +8,8 @@ main:
   - title: "Research"
     url: /research/    
 
- - title: "Recruiting"
-   url: /vacancies/
+  - title: "Recruiting"
+    url: /vacancies/
  
   - title: "Fitness & Reading"
     url: /fitness/
