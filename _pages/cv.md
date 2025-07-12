@@ -14,7 +14,7 @@ redirect_from:
 <ul style="font-size:85%">
   <li>July 2025 - Present,</li>
   <ul>
-    <li>Lecturer in Machine Learning and Computer Vision, School of Computer Science, University of Bristol.</li>
+    <li>Lecturer in Machine Learning and Computer Vision, University of Bristol.</li>
   </ul>
   <li>January 2024 - June 2025,</li>
   <ul>
