@@ -12,7 +12,11 @@ redirect_from:
 <div>
 <b style="font-size:120%">Education & Experience</b>
 <ul style="font-size:85%">
-  <li>January 2024 - Present,</li>
+  <li>July 2025 - Present,</li>
+  <ul>
+    <li>Lecturer in Machine Learning and Computer Vision, School of Computer Science, University of Bristol.</li>
+  </ul>
+  <li>January 2024 - June 2025,</li>
   <ul>
     <li>Postdoctoral Fellow at MMLab, CUHK.</li>
     <li>Working with Dr. <a href="https://xyue.io">Xiangyu Yue</a>.</li>
