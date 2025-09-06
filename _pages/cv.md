@@ -56,6 +56,7 @@ redirect_from:
 <div>
 <b style="font-size:120%">Services & Organization</b>
 <ul style="font-size:85%">
+  <li>Area Chair: ICLR'26</li>
   <li>Paper Review</li>
   <ul>
     <li>Conference: ICCV'21'23, CVPR'22'23'24, ECCV'22'24, NeurIPS'22'23, ICML'23'24, ICLR'24</li>
