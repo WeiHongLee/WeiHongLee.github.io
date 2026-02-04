@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Wei-Hong Li | Computer Vision & Machine Learning</title>
+    <meta name="description" content="Professor at University of Bristol, specializing in universal representation learning, multi-task learning, and 3D-aware computer vision.">
+    <meta name="keywords" content="Wei-Hong Li, Computer Vision, Machine Learning, Multi-task Learning, University of Bristol, MAVI, ELLIS">
+    <meta name="author" content="Dr. Wei-Hong Li">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://WeiHongLee.github.io/">
+    <meta property="og:title" content="Dr. Wei-Hong Li | Computer Vision & Machine Learning">
+    <meta property="og:description" content="Professor at University of Bristol, specializing in universal representation learning, multi-task learning, and 3D-aware computer vision.">
+    <meta property="og:image" content="https://WeiHongLee.github.io/images/MyPic.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://WeiHongLee.github.io/">
+    <meta property="twitter:title" content="Dr. Wei-Hong Li | Computer Vision & Machine Learning">
+    <meta property="twitter:description" content="Professor at University of Bristol, specializing in universal representation learning, multi-task learning, and 3D-aware computer vision.">
+    <meta property="twitter:image" content="https://WeiHongLee.github.io/images/MyPic.png">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #041E42 0%, #0A2F5F 100%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 60px 0;
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px); }
+            50% { transform: rotate(180deg) translate(20px); }
+        }
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text .description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 0 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            border-radius: 2px;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        /* Research Focus */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .research-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .research-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            transition: color 0.3s ease;
+        }
+        
+        .research-card:hover h3 {
+            color: #041E42;
+        }
+        
+        /* Recognition Section */
+        .recognition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            border-image: linear-gradient(180deg, #667eea, #764ba2) 1;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .achievement .icon {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+        
+        /* News Section */
+        .news-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scrolling-news {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+        
+        .scrolling-news::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .scrolling-news::-webkit-scrollbar-track {
+            background: rgba(4, 30, 66, 0.1);
+            border-radius: 3px;
+        }
+        
+        .scrolling-news::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #041E42, #0A2F5F);
+            border-radius: 3px;
+        }
+        
+        .news-list {
+            list-style: none;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .news-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .news-item:hover {
+            background: rgba(4, 30, 66, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            font-weight: 600;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-right: 1rem;
+        }
+        
+        /* Research Areas */
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .research-area {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .research-area:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .research-area h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .research-area h3 i {
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .research-area p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* Publications */
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .paper-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .paper-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .paper-card:hover .paper-title {
+            color: #041E42;
+        }
+        
+        .paper-authors {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-venue {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-venue .highlight {
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .paper-link {
+            color: #041E42;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            background: rgba(4, 30, 66, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .paper-link:hover {
+            background: rgba(4, 30, 66, 0.2);
+            transform: translateY(-1px);
+            color: #041E42;
+            text-decoration: none;
+        }
+        
+        /* Opportunities Section */
+        .opportunities {
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .opportunities::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .opportunities h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .opportunities ul {
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .opportunities li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .opportunities p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .opportunities a {
+            color: #fed7e2;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .opportunities a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+            text-shadow: 0 0 8px rgba(254, 215, 226, 0.6);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            width: 20px;
+        }
+        
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(4, 30, 66, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(4, 30, 66, 0.6);
+        }
+        
+        .social-link:hover {
+            background-color: #718096;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer p {
+            color: #a0aec0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(4, 30, 66, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                transform: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">Dr. Wei-Hong Li</a>
+                <ul class="nav-links">
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="recruiting.html">Recruiting</a></li>
+                    <li><a href="fitness.html">Misc</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/croped_academic.png" alt="Dr. Wei-Hong Li" class="profile-image">
+                </div>
+                <div class="hero-text">
+                    <h1>Dr. Wei-Hong Li</h1>
+                    <p class="subtitle">Assistant Professor | University of Bristol</p>
+                    <p class="description">
+                        Research in computer vision and machine learning, focusing on 
+                        universal representations and multi-task learning
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="research-interests.html" class="btn btn-primary">Explore Research</a>
+                        <a href="#news" class="btn btn-outline">Latest News</a>
+                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section fade-in">
+                <h2>About Me</h2>
+                <p>
+                    I am currently a <strong>Lecturer</strong> (equivalent to assistant professor in the US) within School of Computer Science at the 
+                    <strong>University of Bristol</strong> and a faculty member of the 
+                    <a href="https://uob-mavi.github.io/people/" target="_blank">MAVI group</a>. 
+                    I am also a member of <a href="https://ellis.eu/members" target="_blank">ELLIS – the European Laboratory for Learning and Intelligent Systems</a>.
+                </p>
+                <p>
+                    Prior to Bristol, I was very lucky to work with <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html" target="_blank">Dr. Hakan Bilen</a> 
+                    as a PhD student (also supervised by <a href="https://homepages.inf.ed.ac.uk/thospeda/" target="_blank">Prof. Timothy Hospedales</a>) and a postdoc 
+                    and spent five wonderful years at the <strong>University of Edinburgh</strong>. I have also been a postdoctoral fellow within the 
+                    MultiMedia Lab (MMLab) at the <strong>Chinese University of Hong Kong</strong>, working with 
+                    <a href="https://xyue.io" target="_blank">Dr. Xiangyu Yue</a>. Before Edinburgh, I did my master and bachelor at 
+                    <strong>Sun Yat-sen University</strong>, working with <a href="http://www.isee-ai.cn/~zhwshi/index.html" target="_blank">Prof. Wei-Shi Zheng</a> 
+                    who thankfully introduced me to computer vision. During the master program, I was lucky to visit 
+                    <strong>Queen Mary University of London</strong> to work with 
+                    <a href="http://www.eecs.qmul.ac.uk/~sgg/" target="_blank">Prof. Shaogang Gong FREng</a>.
+                </p>
+                <p>
+                    My research interests are in computer vision and machine learning, with a focus on multi-task/domain learning and 
+                    enable the visual models to learn from limited human supervision and to be 3D-aware. My PhD thesis is awarded the 
+                    BMVA <a href="https://www.bmva.org/bursaries/sullivan-prize.html" target="_blank">Sullivan Doctoral Thesis Prize Runner-Up</a>. 
+                    My <a href="https://groups.inf.ed.ac.uk/vico/research/MTPSL/" target="_blank">MTPSL</a> paper is awarded the 
+                    <a href="https://twitter.com/CVPR/status/1539772091112857600" target="_blank">CVPR 2022 Best Paper Nominees</a>. 
+                    I serve as Area Chair at ICLR'26 and have been a reviewer for top-tier conferences such as CVPR, ICCV, NeurIPS and journals such as TPAMI et al and 
+                    received the top reviewer award at NeurIPS'23'24.
+                </p>
+            </section>
+
+            <!-- Opportunities Section -->
+            <section id="opportunities" class="opportunities fade-in">
+                <h3><a href="recruiting.html" style="color: inherit; text-decoration: none;">PhD & Research Opportunities</a></h3>
+                <p>
+                    I am actively seeking highly self-motivated PhD students, visiting researchers, and research interns 
+                    to join our team at the University of Bristol. We work on exciting areas including:
+                </p>
+                <ul>
+                    <li>Generative modeling and synthesis</li>
+                    <li>3D computer vision and spatial understanding</li>
+                    <li>Motion generation and human-centered AI</li>
+                    <li>Multimodal learning and representation</li>
+                    <li>Universal representation learning</li>
+                </ul>
+                <p>
+                    <strong>Interested?</strong> Feel free to <a href="mailto:whli.bristol@gmail.com">email me</a> to discuss these opportunities! 
+                    <a href="recruiting.html" style="color: #fed7e2;">Learn more about available positions →</a>
+                </p>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="section fade-in">
+                <h2>Latest News</h2>
+                <div class="news-section">
+                    <div class="scrolling-news">
+                        <div class="news-item">
+                            <span class="news-date">December 2025:</span>
+                            We have released a <a href="https://arxiv.org/abs/2512.16456" target="_blank">preprint</a> and <a href="https://masashi-hatano.github.io/prime-and-reach/" target="_blank">dataset</a> of our recent work on synthesising body motion for gaze-primed object reach! Make sure to check it out!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">December 2025:</span>
+                            We have released a <a href="https://arxiv.org/abs/2511.20646" target="_blank">preprint</a> of our recent work on 3D-aware Multi-task Learning with Cross-view Correlations! Make sure to check it out!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">September 2025:</span>
+                            Invited to serve as Area Chair at ICLR'26!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">July 2025:</span>
+                            I am excited to join the University of Bristol as a Lecturer and a core faculty within the <a href="https://uob-mavi.github.io/people/" target="_blank">MAVI group</a>!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">June 2025:</span>
+                            One paper accepted to ICCV 2025. Congrats to Yilei, Yiyuan, Minghong, and Xiangyu!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">March 2025:</span>
+                            I will join the University of Bristol as a Lecturer (Assistant Professor) and will be co-leading the <a href="https://uob-mavi.github.io/people/" target="_blank">MAVI group</a> in fall 2025!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">February 2025:</span>
+                            One paper accepted to CVPR 2025. Congrats to Chen, Xiangyu and our collaborators!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">November 2024:</span>
+                            Received the <a href="https://neurips.cc/Conferences/2024/ProgramCommittee" target="_blank">Top Reviewer Award at NeurIPS 2024</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">October 2024:</span>
+                            One paper accepted to NeurIPS 2024. Congrats to Lingxiao, Xiangyu and our collaborators!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">January 2024:</span>
+                            One paper accepted to ICLR 2024. Congrats to Steven, Ales, and Hakan!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">November 2023:</span>
+                            Received the <a href="https://nips.cc/Conferences/2023/ProgramCommittee" target="_blank">Top Reviewer Award at NeurIPS 2023</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">November 2023:</span>
+                            Received the BMVA <a href="https://www.bmva.org/bursaries/sullivan-prize.html" target="_blank">Sullivan Doctoral Thesis Prize Runner-Up</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">October 2023:</span>
+                            Giving an invited talk about <a href="https://mp.weixin.qq.com/s/m2XUyDd8ek9gXAFl9CaXFw" target="_blank">Universal Representation Learning</a> at the AI seminar at HKUST-GZ
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">October 2023:</span>
+                            We have released a <a href="https://arxiv.org/abs/2310.00986" target="_blank">preprint</a> of our recent work on 3D-aware multi-task learning. Make sure to check it out!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">July 2023:</span>
+                            Our <a href="https://arxiv.org/abs/2204.02744" target="_blank">Universal Representations</a> paper is accepted by IJCV. Congrats to Xialei and Hakan!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">June 2022:</span>
+                            Our "<a href="https://groups.inf.ed.ac.uk/vico/research/MTPSL/" target="_blank">Learning Multiple Dense Prediction Tasks from Partially Annotated Data</a>" paper is listed as <a href="https://twitter.com/CVPR/status/1539772091112857600" target="_blank">CVPR 2022 Best Paper Finalist</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">March 2022:</span>
+                            Two papers accepted to CVPR 2022. Congrats to Xialei and Hakan!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">July 2021:</span>
+                            <a href="https://weihonglee.github.io/Projects/URL/URL.htm" target="_blank">One paper</a> to appear at ICCV 2021. Congrats to Xialei and Hakan!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">February 2019:</span>
+                            The paper <a href="https://arxiv.org/pdf/1904.03632.pdf" target="_blank">Learning to Learn Relation for Important People Detection in Still Images</a> is accepted by CVPR 2019. Congrats to Fa-Ting Hong and Wei-Shi Zheng!
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">January 2018:</span>
+                            The paper <a href="https://arxiv.org/abs/1711.01984" target="_blank">PersonRank: Detecting Important People in Images</a> is accepted by FG 2018 as an oral paper
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact fade-in">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:w.h.li.ed@outlook.com">w.h.li.ed@outlook.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-university"></i>
+                            <span>School of Computer Science, University of Bristol</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bristol, United Kingdom</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=xKKsIxcAAAAJ&hl=zh-CN&authuser=1" target="_blank" class="social-link" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/WeiHongLee" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/wei-hong-li-91394a330" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/WayHomeLi" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Dr. Wei-Hong Li. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(4, 30, 66, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            }
+        });
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.pointerEvents = 'none';
+                }
+            }
+        });
+        
+        // Logo click to go home
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            if (this.getAttribute('href') === 'index.html' && window.location.pathname.includes('index.html')) {
+                e.preventDefault();
+                scrollToTop();
+            }
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96369953-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-96369953-1');
+    </script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Dr. Wei-Hong Li</title>
+    <meta name="description" content="Research areas and projects by Dr. Wei-Hong Li, focusing on computer vision and machine learning.">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #041E42 0%, #0A2F5F 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        /* Header */
+        .header {
+            padding: 100px 0 60px 0;
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px); }
+            50% { transform: rotate(180deg) translate(20px); }
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 0 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            border-radius: 2px;
+        }
+        
+        /* Research Areas */
+        .research-list {
+            max-width: 800px;
+        }
+        
+        .research-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .research-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .research-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .research-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            transition: color 0.3s ease;
+        }
+        
+        .research-item:hover h3 {
+            color: #041E42;
+        }
+        
+        /* Project Showcase */
+        .project-showcase {
+            margin-top: 2rem;
+        }
+        
+        .project-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .project-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .project-image {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-content {
+            flex: 1;
+        }
+        
+        .project-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .project-content h3 a {
+            color: #2d3748;
+            text-decoration: none;
+        }
+        
+        .project-item:hover .project-content h3 a {
+            color: #041E42;
+        }
+        
+        .project-authors {
+            color: #4a5568;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .project-venue {
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .research-item p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .research-item ul {
+            color: #4a5568;
+            margin-left: 1.5rem;
+        }
+        
+        .research-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .project-card:hover .project-title {
+            color: #041E42;
+        }
+        
+        .project-venue {
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .project-link {
+            color: #041E42;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            background: rgba(4, 30, 66, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: rgba(4, 30, 66, 0.2);
+            transform: translateY(-1px);
+            color: #041E42;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(4, 30, 66, 0.1);
+            color: #041E42;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(4, 30, 66, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(4, 30, 66, 0.2);
+            transform: translateX(-5px);
+            color: #041E42;
+            text-decoration: none;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(4, 30, 66, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(4, 30, 66, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(4, 30, 66, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                transform: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .project-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .project-image {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Dr. Wei-Hong Li</a>
+                <ul class="nav-links">
+                    <li><a href="research.html" class="active">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="recruiting.html">Recruiting</a></li>
+                    <li><a href="fitness.html">Misc</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Research Projects</h1>
+            <p>
+                Showcase of my research projects in computer vision and machine learning, 
+                featuring key publications and their contributions to the field.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <!-- Research Projects -->
+            <section class="section">
+                <h2>Featured Research Projects</h2>
+                
+                <div class="project-showcase">
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/MTPSL/Basic/Li22b.png" alt="MTPSL Framework">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://groups.inf.ed.ac.uk/vico/research/MTPSL/">Learning Multiple Dense Prediction Tasks from Partially Annotated Data</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Xialei Liu, Hakan Bilen</p>
+                            <p class="project-venue">CVPR 2022 (Oral, Best Paper Nominee)</p>
+                            <p class="project-description">A framework for learning multiple dense prediction tasks when only partial annotations are available for each task.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/RA/Basic/Li22a.png" alt="Cross-domain Few-shot Learning">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://groups.inf.ed.ac.uk/vico/research/TSA/">Cross-domain Few-shot Learning with Task-specific Adapters</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Xialei Liu, Hakan Bilen</p>
+                            <p class="project-venue">CVPR 2022</p>
+                            <p class="project-description">Task-specific adapters enable effective few-shot learning across different domains with minimal parameter updates.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/URL/Basic/universal-feature-extractor.pdf" alt="Universal Representation Learning">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://groups.inf.ed.ac.uk/vico/research/URL/">Universal Representation Learning from Multiple Domains for Few-shot Classification</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Xialei Liu, Hakan Bilen</p>
+                            <p class="project-venue">ICCV 2021</p>
+                            <p class="project-description">Learning universal feature representations that generalize across multiple domains for few-shot classification tasks.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/Learning-to-impute/Basic/diagram.pdf" alt="Learning to Impute">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://WeiHongLee.github.io/Research/Learning-to-impute/Learning-to-impute.htm">Learning to Impute: A General Framework for Semi-supervised Learning</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Chuan-Sheng Foo, Hakan Bilen</p>
+                            <p class="project-venue">Preprint 2019</p>
+                            <p class="project-description">A general framework that learns to impute missing features for semi-supervised learning scenarios.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/KD-MTL/Basic/diagram.pdf" alt="Knowledge Distillation MTL">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://WeiHongLee.github.io/Research/KD-MTL/KD-MTL.htm">Knowledge Distillation for Multi-task Learning</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Hakan Bilen</p>
+                            <p class="project-venue">ECCV Workshop 2020</p>
+                            <p class="project-description">Applying knowledge distillation techniques to improve multi-task learning performance and efficiency.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/POINT/Basic/FrameworkDetail.pdf" alt="POINT Framework">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://WeiHongLee.github.io/Research/POINT/POINT.htm">Learning to Learn Relation for Important People Detection in Still Images</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Fa-Ting Hong, Wei-Shi Zheng</p>
+                            <p class="project-venue">CVPR 2019</p>
+                            <p class="project-description">Meta-learning approach for detecting important people in images by learning relational patterns.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/PersonRank/FrameWork.pdf" alt="PersonRank">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://WeiHongLee.github.io/Research/PersonRank.htm">PersonRank: Detecting Important People in Images</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Benchao Li, Wei-Shi Zheng</p>
+                            <p class="project-venue">FG 2018 (Oral)</p>
+                            <p class="project-description">A ranking-based approach for automatically identifying the most important people in group photos.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="https://WeiHongLee.github.io/Research/SoDA/Basic/dataStream.pdf" alt="SoDA">
+                        </div>
+                        <div class="project-content">
+                            <h3><a href="https://WeiHongLee.github.io/Research/SoDA/SoDA.htm">One-pass Person Re-identification by Sketched Online Discriminant Analysis</a></h3>
+                            <p class="project-authors">Wei-Hong Li, Zhuowei Zhong, Wei-Shi Zheng</p>
+                            <p class="project-venue">PR 2019</p>
+                            <p class="project-description">Efficient online person re-identification using sketched discriminant analysis for real-time applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(4, 30, 66, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            }
+        });
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.pointerEvents = 'none';
+                }
+            }
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

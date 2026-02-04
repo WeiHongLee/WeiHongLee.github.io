@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting | Dr. Wei-Hong Li</title>
+    <meta name="description" content="PhD and research opportunities at University of Bristol with Dr. Wei-Hong Li">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #041E42 0%, #0A2F5F 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .logo:hover {
+            color: #e2e8f0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .nav-links a.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        /* Header */
+        .header {
+            padding: 100px 0 60px 0;
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px); }
+            50% { transform: rotate(180deg) translate(20px); }
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 4rem 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            color: #041E42;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        /* Opportunity Cards */
+        .opportunities {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .opportunity-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            transition: height 0.3s ease;
+        }
+        
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .opportunity-card:hover::before {
+            height: 6px;
+        }
+        
+        .opportunity-card h4 {
+            color: #041E42;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .opportunity-card h4 i {
+            font-size: 1.5rem;
+            color: #0A2F5F;
+        }
+        
+        .opportunity-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .opportunity-card ul {
+            color: #4a5568;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .opportunity-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Research Areas */
+        .research-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .research-tag {
+            background: linear-gradient(135deg, #1a365d, #2d3748);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .research-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.4);
+            background: linear-gradient(135deg, #2d3748, #1a365d);
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-info a {
+            color: #041E42;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-info a:hover {
+            color: #0A2F5F;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(4, 30, 66, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                transform: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .opportunity-card {
+                padding: 2rem;
+            }
+            
+            .research-areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .header {
+                padding: 6rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Dr. Wei-Hong Li</a>
+                <ul class="nav-links">
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="recruiting.html" class="active">Recruiting</a></li>
+                    <li><a href="fitness.html">Misc</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Join Our Research Team</h1>
+            <p>
+                Exciting opportunities for PhD students, visiting researchers, and research interns 
+                to work on cutting-edge computer vision and machine learning projects at University of Bristol.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <!-- Current Opportunities -->
+            <section class="section">
+                <h2>Available Positions</h2>
+                <div class="opportunities">
+                    <div class="opportunity-card">
+                        <h4><i class="fas fa-user-tie"></i> Postdoc Position</h4>
+                        <p>
+                            Currently we do not have any open postdoc positions. If you would like to go with CSC or other similar fundings, please send an e-email to Dr Li.
+                        </p>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <h4><i class="fas fa-graduation-cap"></i> PhD Position</h4>
+                        <p>
+                            Admissions for 2025 have already closed. We are currently looking for PhD students to for the 2026 entry. School of Computer Science offer multiple PhD scholarships available at the school page and Centers for Doctoral Training.
+                        </p>
+                        <p>
+                            <strong>If you are interested, please send an e-mail to Dr Li (whli [DOT] bristol [AT] gmail [DOT] com) with the title [Prospective PhD]</strong> including (There will be limited positions, for maximizing your chances please apply as soon as possible.):
+                        </p>
+                        <ul>
+                            <li>a copy of your CV and explanation for,</li>
+                            <li>why you want to work with my group specifically,</li>
+                            <li>what topics you would be keen to explore and how would it fit into what we are working on.</li>
+                        </ul>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <h4><i class="fas fa-flag"></i> CSC Scholarship for Students from China</h4>
+                        <p>
+                            The China Scholarship Council (CSC) and the University of Bristol jointly fund multiple (60) scholarships. Check the details about the scholarships <a href="https://www.bristol.ac.uk/students/support/finances/scholarships/china-scholarship-council/" target="_blank" style="color: #041E42; font-weight: 500;">here</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Areas -->
+            <section class="section">
+                <h3>Research Areas We're Hiring For</h3>
+                <div class="research-areas-grid">
+                    <div class="research-tag">Generative Modeling</div>
+                    <div class="research-tag">3D Computer Vision</div>
+                    <div class="research-tag">Motion Generation</div>
+                    <div class="research-tag">Multimodal Learning</div>
+                    <div class="research-tag">Multi-Task Learning</div>
+                    <div class="research-tag">Self-Supervised Learning</div>
+                    <div class="research-tag">Universal Representations</div>
+                    <div class="research-tag">Human-Centered AI</div>
+                </div>
+            </section>
+
+            <!-- What We're Looking For -->
+            <section class="section">
+                <h3>Ideal Candidates</h3>
+                <div class="opportunity-card" style="background: rgba(255, 255, 255, 0.95); border: 2px solid rgba(4, 30, 66, 0.1);">
+                    <h4><i class="fas fa-star"></i> Essential Qualifications</h4>
+                    <ul>
+                        <li><strong>Strong academic background</strong> in Computer Science, Mathematics, Engineering, or related fields</li>
+                        <li><strong>Programming experience</strong> in Python, with familiarity in PyTorch or TensorFlow</li>
+                        <li><strong>Mathematical foundation</strong> in linear algebra, calculus, statistics, and machine learning</li>
+                        <li><strong>Research experience</strong> (publications, thesis projects, or relevant coursework)</li>
+                        <li><strong>English proficiency</strong> for international students</li>
+                    </ul>
+                    
+                    <h4><i class="fas fa-plus"></i> Preferred Qualifications</h4>
+                    <ul>
+                        <li>Prior experience with computer vision or machine learning projects</li>
+                        <li>Publications in relevant conferences or journals</li>
+                        <li>Experience with GPU computing and distributed training</li>
+                        <li>Background in optimization, deep learning, or related areas</li>
+                        <li>Open source contributions to relevant projects</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Ready to Apply?</h3>
+                <p>
+                    I encourage you to reach out even if you're unsure about your qualifications. 
+                    I'm always happy to discuss potential opportunities and help you understand 
+                    if our research group would be a good fit for your interests and goals.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    <i class="fas fa-envelope"></i> 
+                    <a href="mailto:whli.bristol@gmail.com">whli.bristol@gmail.com</a>
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <i class="fas fa-university"></i> 
+                    School of Computer Science, University of Bristol
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(4, 30, 66, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            }
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

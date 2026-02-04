@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. Wei-Hong Li</title>
+    <meta name="description" content="Publications by Dr. Wei-Hong Li in computer vision and machine learning.">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #041E42 0%, #0A2F5F 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        /* Header */
+        .header {
+            padding: 100px 0 60px 0;
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px); }
+            50% { transform: rotate(180deg) translate(20px); }
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 0 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        /* Publication Sections */
+        .publications-section {
+            margin-bottom: 4rem;
+            animation: slideInUp 0.6s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .publications-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .publications-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .publications-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: #4a5568;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .publications-section h3::before {
+            content: '📚';
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Publication Lists */
+        .publication-list {
+            margin-bottom: 2rem;
+        }
+        
+        .publication-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .publication-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .publication-item .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .publication-item:hover .title {
+            color: #041E42;
+        }
+        
+        .publication-item .authors {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .publication-item .venue {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .publication-item .venue .highlight {
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .publication-item .venue .award {
+            background: linear-gradient(90deg, #ffd89b, #19547b);
+            color: #ffffff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .publication-item .venue .award::before {
+            content: '🏆';
+            margin-right: 0.3rem;
+            font-size: 0.8rem;
+        }
+        
+        .publication-item .links {
+            font-size: 0.85rem;
+        }
+        
+        .publication-item .links a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .publication-item .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(4, 30, 66, 0.1);
+            color: #041E42;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(4, 30, 66, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(4, 30, 66, 0.2);
+            transform: translateX(-5px);
+            color: #041E42;
+            text-decoration: none;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(4, 30, 66, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(4, 30, 66, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(4, 30, 66, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                transform: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .filter-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Dr. Wei-Hong Li</a>
+                <ul class="nav-links">
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="recruiting.html">Recruiting</a></li>
+                    <li><a href="fitness.html">Misc</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Publications</h1>
+            <p>
+                Research contributions in computer vision and machine learning, 
+                published in top-tier conferences and journals.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <!-- Publications List -->
+            <section class="publications-section">
+                <h2>Recent Publications</h2>
+                
+                <h3>2025</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Prime and Reach: Synthesising Body Motion for Gaze-Primed Object Reach</div>
+                        <div class="authors">Masashi Hatano, Saptarshi Sinha, Jacob Chalk, <strong>Wei-Hong Li</strong>, Hideo Saito, Dima Damen</div>
+                        <div class="venue">Preprint</div>
+                        <div class="links">
+                            <a href="https://arxiv.org/abs/2512.16456">arXiv</a> • 
+                            <a href="https://masashi-hatano.github.io/prime-and-reach/">Project Page</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding</div>
+                        <div class="authors">Xiaoye Wang, Chen Tang, Xiangyu Yue, <strong>Wei-Hong Li</strong></div>
+                        <div class="venue">Preprint</div>
+                        <div class="links">
+                            <a href="https://arxiv.org/abs/2511.20646">arXiv</a> • 
+                            <a href="https://github.com/WeiHongLee/CrossView3DMTL">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">UniSTD: Towards Unified Spatio-Temporal Prediction across Diverse Disciplines</div>
+                        <div class="authors">Chen Tang, Xinzhu Ma, Encheng Su, Xiufeng Song, Xiaohong Liu, <strong>Wei-Hong Li</strong>, Lei Bai, Wanli Ouyang, Xiangyu Yue</div>
+                        <div class="venue"><span class="highlight">CVPR 2025</span></div>
+                        <div class="links">
+                            <a href="https://arxiv.org/abs/2503.20748">arXiv</a> • 
+                            <a href="https://github.com/1hunters/UniSTD">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">FairGen: Enhancing Fairness in Text-to-Image Diffusion Models via Self-Discovering Latent Directions</div>
+                        <div class="authors">Yilei Jiang, <strong>Wei-Hong Li</strong>, Yiyuan Zhang, Minghong Cai, Xiangyu Yue</div>
+                        <div class="venue"><span class="highlight">ICCV 2025</span></div>
+                        <div class="links">
+                            <a href="https://www.arxiv.org/abs/2412.18810">arXiv</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2024</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Bifröst: 3D-Aware Image compositing with Language Instructions</div>
+                        <div class="authors">Lingxiao Li, Kaixiong Gong, <strong>Wei-Hong Li</strong>, Xili Dai, Tao Chen, Xiaojun Yuan, Xiangyu Yue</div>
+                        <div class="venue"><span class="highlight">NeurIPS 2024</span></div>
+                        <div class="links">
+                            <a href="https://arxiv.org/pdf/2410.19079">arXiv</a> • 
+                            <a href="https://github.com/lingxiao-li/Bifrost">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">Multi-task Learning with 3D-Aware Regularization</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Steven McDonagh, Ales Leonardis, Hakan Bilen</div>
+                        <div class="venue"><span class="highlight">ICLR 2024</span></div>
+                        <div class="links">
+                            <a href="https://openreview.net/pdf?id=TwBY17Hgiy">OpenReview</a> • 
+                            <a href="https://arxiv.org/pdf/2310.00986.pdf">arXiv</a> • 
+                            <a href="https://github.com/VICO-UoE/MTPSL">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2023</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Universal Representations: A Unified Look at Multiple Task and Domain Learning</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Xialei Liu, Hakan Bilen</div>
+                        <div class="venue"><span class="highlight">IJCV 2023</span></div>
+                        <div class="links">
+                            <a href="https://arxiv.org/pdf/2204.02744.pdf">arXiv</a> • 
+                            <a href="https://link.springer.com/article/10.1007/s11263-023-01931-6">Springer</a> • 
+                            <a href="https://github.com/VICO-UoE/UniversalRepresentations">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2022</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Learning Multiple Dense Prediction Tasks from Partially Annotated Data</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Xialei Liu, Hakan Bilen</div>
+                        <div class="venue">
+                            <span class="highlight">CVPR 2022 (Oral)</span>
+                            <span class="award">Best Paper Finalist</span>
+                        </div>
+                        <div class="links">
+                            <a href="https://groups.inf.ed.ac.uk/vico/research/MTPSL/">Project Page</a> • 
+                            <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Learning_Multiple_Dense_Prediction_Tasks_From_Partially_Annotated_Data_CVPR_2022_paper.pdf">CVF</a> • 
+                            <a href="https://arxiv.org/pdf/2111.14893.pdf">arXiv</a> • 
+                            <a href="https://github.com/VICO-UoE/MTPSL">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">Cross-domain Few-shot Learning with Task-specific Adapters</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Xialei Liu, Hakan Bilen</div>
+                        <div class="venue"><span class="highlight">CVPR 2022</span></div>
+                        <div class="links">
+                            <a href="https://groups.inf.ed.ac.uk/vico/research/TSA/">Project Page</a> • 
+                            <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Cross-Domain_Few-Shot_Learning_With_Task-Specific_Adapters_CVPR_2022_paper.pdf">CVF</a> • 
+                            <a href="https://arxiv.org/pdf/2107.00358.pdf">arXiv</a> • 
+                            <a href="https://github.com/VICO-UoE/URL">Code</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">Learning Relation Models to Detect Important People in Still Images</div>
+                        <div class="authors">Yu-Kun Qiu, Fa-Ting Hong, <strong>Wei-Hong Li</strong>, Wei-Shi Zheng</div>
+                        <div class="venue">TMM 2022</div>
+                        <div class="links">
+                            <a href="https://ieeexplore.ieee.org/document/9907874">IEEE</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">Learning universal representations across tasks and domains</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong></div>
+                        <div class="venue">
+                            PhD Thesis, University of Edinburgh 2022
+                            <span class="award">BMVA Sullivan Doctoral Thesis Prize Runner-Up</span>
+                        </div>
+                        <div class="links">
+                            <a href="https://era.ed.ac.uk/handle/1842/39625">PhD Thesis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2021</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Universal Representation Learning from Multiple Domains for Few-shot Classification</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Xialei Liu, Hakan Bilen</div>
+                        <div class="venue"><span class="highlight">ICCV 2021</span></div>
+                        <div class="links">
+                            <a href="https://groups.inf.ed.ac.uk/vico/research/URL/">Project Page</a> • 
+                            <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Li_Universal_Representation_Learning_From_Multiple_Domains_for_Few-Shot_Classification_ICCV_2021_paper.pdf">CVF</a> • 
+                            <a href="https://arxiv.org/pdf/2103.13841.pdf">arXiv</a> • 
+                            <a href="https://github.com/VICO-UoE/URL">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2020</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Learning to Detect Important People in Unlabelled Images for Semi-supervised Important People Detection</div>
+                        <div class="authors">Fa-Ting Hong, <strong>Wei-Hong Li</strong>, Wei-Shi Zheng</div>
+                        <div class="venue"><span class="highlight">CVPR 2020</span></div>
+                        <div class="links">
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Hong_Learning_to_Detect_Important_People_in_Unlabelled_Images_for_Semi-Supervised_CVPR_2020_paper.pdf">CVF</a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="title">Knowledge Distillation for Multi-task Learning</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Hakan Bilen</div>
+                        <div class="venue">ECCV Workshop 2020</div>
+                        <div class="links">
+                            <a href="https://WeiHongLee.github.io/Research/KD-MTL/KD-MTL.htm">Project Page</a> • 
+                            <a href="https://arxiv.org/pdf/2007.06889.pdf">arXiv</a> • 
+                            <a href="https://github.com/VICO-UoE/KD4MTL">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2019</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Learning to Learn Relation for Important People Detection in Still Images</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Fa-Ting Hong, Wei-Shi Zheng</div>
+                        <div class="venue"><span class="highlight">CVPR 2019</span></div>
+                        <div class="links">
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_to_Learn_Relation_for_Important_People_Detection_in_Still_CVPR_2019_paper.pdf">CVF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Earlier Works</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <div class="title">Correlation based Identity Filter: An Efficient Framework For Person Search</div>
+                        <div class="authors"><strong>Wei-Hong Li</strong>, Yafang Mao, Ancong Wu, Wei-Shi Zheng</div>
+                        <div class="venue">
+                            ICIG 2017 (Oral)
+                            <span class="award">Best Paper Award</span>
+                        </div>
+                        <div class="links">
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-319-71607-7_22">Springer</a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="title">Sketch metric learning</div>
+                        <div class="authors">Yuting Mai, <strong>Wei-Hong Li</strong>, Yongyi Tang, Xixi Bi, Wei-Shi Zheng</div>
+                        <div class="venue">IJCNN 2016</div>
+                        <div class="links">
+                            <a href="https://WeiHongLee.github.io/papers/Sketch_Metric_Learning.pdf">PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p><strong>For a complete list of publications, please visit:</strong></p>
+                    <a href="https://scholar.google.com/citations?user=xKKsIxcAAAAJ&hl=zh-CN&authuser=1" class="btn btn-primary">Google Scholar Profile →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(4, 30, 66, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            }
+        });
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.pointerEvents = 'none';
+                }
+            }
+        });
+        
+        // Logo click to go to top when on same page
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            if (this.getAttribute('href') === 'index.html') {
+                // Allow normal navigation to index.html
+                return;
+            }
+        });
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
