@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dr. Wei-Hong Li</title>
+    <meta name="description" content="Curriculum Vitae of Dr. Wei-Hong Li - Computer Vision and Machine Learning researcher">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #041E42 0%, #0A2F5F 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(4, 30, 66, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(4, 30, 66, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(4, 30, 66, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-20px, -10px) scale(1.02); }
+            66% { transform: translate(20px, 10px) scale(0.98); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            margin: 0 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            padding: 100px 0 60px 0;
+            background: linear-gradient(135deg, rgba(4, 30, 66, 0.9) 0%, rgba(10, 47, 95, 0.9) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: floatDots 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translate(0px); }
+            50% { transform: rotate(180deg) translate(20px); }
+        }
+        
+        @keyframes floatDots {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cv-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .cv-section {
+            margin-bottom: 80px;
+        }
+        
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cv-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .cv-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #041E42, #0A2F5F);
+            border-radius: 2px;
+        }
+        
+        .cv-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cv-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .cv-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .cv-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .cv-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            transition: color 0.3s ease;
+        }
+        
+        .cv-item:hover h3 {
+            color: #041E42;
+        }
+        
+        .cv-item .position {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cv-item .institution {
+            font-size: 1rem;
+            color: #041E42;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cv-item .period {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+        
+        .cv-item .description {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .cv-item ul {
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+        }
+        
+        .cv-item li {
+            margin-bottom: 0.3rem;
+            color: #4a5568;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .skill-category:hover h3 {
+            color: #041E42;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.9);
+            color: #4a5568;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: popIn 0.5s ease forwards;
+            backdrop-filter: blur(5px);
+        }
+        
+        .skill-tag:nth-child(odd) { animation-delay: 0.1s; }
+        .skill-tag:nth-child(even) { animation-delay: 0.2s; }
+        
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .skill-tag:hover {
+            background: #041E42;
+            color: white;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(4, 30, 66, 0.3);
+        }
+        
+        .achievements-list {
+            list-style: none;
+        }
+        
+        .achievements-list li {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            color: #4a5568;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.6s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .achievements-list li:nth-child(1) { animation-delay: 0.1s; }
+        .achievements-list li:nth-child(2) { animation-delay: 0.2s; }
+        .achievements-list li:nth-child(3) { animation-delay: 0.3s; }
+        .achievements-list li:nth-child(4) { animation-delay: 0.4s; }
+        .achievements-list li:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .achievements-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .achievements-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: white;
+                border-top: 1px solid #e2e8f0;
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 0.8rem;
+                border-radius: 8px;
+            }
+            
+            .nav-links a:last-child {
+                margin-bottom: 0;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                background: #f7fafc;
+                transform: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .cv-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Dr. Wei-Hong Li</a>
+                <ul class="nav-links">
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="cv.html" class="active">CV</a></li>
+                    <li><a href="recruiting.html">Recruiting</a></li>
+                    <li><a href="fitness.html">Misc</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Curriculum Vitae</h1>
+            <p class="subtitle">Dr. Wei-Hong Li</p>
+            <p>Lecturer (Assistant Professor) in Computer Science<br>University of Bristol, United Kingdom</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="cv-content">
+                <!-- Education & Experience -->
+                <div class="cv-section">
+                    <h2>Education & Experience</h2>
+                    
+                    <div class="cv-item">
+                        <h3>Lecturer (Assistant Professor)</h3>
+                        <div class="institution">University of Bristol</div>
+                        <div class="period">July 2025 - Present</div>
+                        <div class="description">
+                            Machine Learning and Computer Vision at the University of Bristol.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>Postdoctoral Fellow</h3>
+                        <div class="institution">MMLab, CUHK</div>
+                        <div class="period">January 2024 - June 2025</div>
+                        <div class="description">
+                            Working with Dr. <a href="https://xyue.io" target="_blank">Xiangyu Yue</a>.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>Postdoctoral Fellow</h3>
+                        <div class="institution">University of Edinburgh, UK</div>
+                        <div class="period">August 2022 - October 2023</div>
+                        <div class="description">
+                            Working with Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html" target="_blank">Hakan Bilen</a>.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>PhD Student</h3>
+                        <div class="institution">University of Edinburgh, UK</div>
+                        <div class="period">September 2018 – August 2022</div>
+                        <div class="description">
+                            Supervised by Dr. <a href="http://homepages.inf.ed.ac.uk/hbilen/index.html" target="_blank">Hakan Bilen</a> and Prof. <a href="https://homepages.inf.ed.ac.uk/thospeda/" target="_blank">Timothy Hospedales</a>.<br>
+                            <strong>Thesis:</strong> <a href="https://era.ed.ac.uk/handle/1842/39625" target="_blank">Learning Universal Representations Across Tasks and Domains</a>.<br>
+                            <strong>Examiner:</strong> Dr. <a href="https://vilab.epfl.ch/zamir/" target="_blank">Amir Zamir</a>, Dr. <a href="https://laurasevilla.me" target="_blank">Laura Sevilla</a>.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>Visiting Student</h3>
+                        <div class="institution">Queen Mary University of London, UK</div>
+                        <div class="period">October 2017 – March 2018</div>
+                        <div class="description">
+                            Supervised by Prof. <a href="https://ssgong.github.io" target="_blank">Sean Gong</a> and Prof. <a href="http://www.isee-ai.cn/~zhwshi/index.html" target="_blank">Wei-Shi Zheng</a>.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>M.Sc. in Electronics and Information Technology</h3>
+                        <div class="institution">Sun Yat-sen University</div>
+                        <div class="period">June 2015 – July 2018</div>
+                        <div class="description">
+                            One of the top ten universities in China.<br>
+                            <strong>Thesis:</strong> Important People Detection and Cross-Camera Pedestrian Tracking.<br>
+                            <strong>Supervised by:</strong> Prof. <a href="http://www.isee-ai.cn/~zhwshi/index.html" target="_blank">Wei-Shi Zheng</a>.
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>B.Sc. in Intelligence Science and Technology</h3>
+                        <div class="institution">Sun Yat-sen University</div>
+                        <div class="period">September 2011 – June 2015, GPA 3.8/4.0</div>
+                        <div class="description">
+                            <strong>Thesis:</strong> Tracking Multiple Targets in Group Activity Scene.<br>
+                            <strong>Supervised by:</strong> Prof. <a href="http://www.isee-ai.cn/~zhwshi/index.html" target="_blank">Wei-Shi Zheng</a>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services & Organization -->
+                <div class="cv-section">
+                    <h2>Services & Organization</h2>
+                    
+                    <div class="cv-item">
+                        <h3>Area Chair</h3>
+                        <div class="description">
+                            ICLR'26
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>Paper Review</h3>
+                        <div class="description">
+                            <strong>Conference:</strong> ICCV'21'23, CVPR'22'23'24, ECCV'22'24, NeurIPS'22'23, ICML'23'24, ICLR'24<br>
+                            <strong>Journal/Transaction:</strong> TPAMI, IJCV, TMLR, Machine Learning, TMM<br>
+                            <strong>Workshop:</strong> <a href="https://what-is-motion-for.github.io" target="_blank">WIMF'22</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <h3>Workshop Organization</h3>
+                        <div class="description">
+                            <a href="https://sites.google.com/view/universalrepresentations" target="_blank">Universal Representations for Computer Vision Workshop</a> at BMVC 2022
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected Awards -->
+                <div class="cv-section">
+                    <h2>Selected Awards</h2>
+                    <ul class="achievements-list">
+                        <li>The BMVA Sullivan Doctoral Thesis Prize Runner-Up</li>
+                        <li>CVPR 2022 Best Paper Finalist (33/8161)</li>
+                        <li>Top Reviewer at NeurIPS'23'24</li>
+                        <li>IGS PhD scholarship at University of Edinburgh</li>
+                        <li>Academic Excellence Award at Sun Yat-Sen University (2011-2018)</li>
+                        <li>Best Paper Award at ICIG 2017</li>
+                        <li>First and Second Prize at Chinese RoboCup Competition (2013-2014)</li>
+                    </ul>
+                </div>
+
+                <!-- Teaching -->
+                <div class="cv-section">
+                    <h2>Teaching</h2>
+                    
+                    <div class="cv-item">
+                        <h3>Teaching Assistant at the University of Edinburgh</h3>
+                        <div class="description">
+                            <ul>
+                                <li>Image and Vision Computing (IVC), 2018-19</li>
+                                <li><a href="http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2018.html" target="_blank">Machine Learning Practical (MLP), 2018-19</a></li>
+                                <li><a href="http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2019.html" target="_blank">Machine Learning Practical (MLP), 2019-20</a></li>
+                                <li><a href="http://www.inf.ed.ac.uk/teaching/courses/mlp/index-2019.html" target="_blank">Machine Learning Practical (MLP), 2020-21</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(4, 30, 66, 0.95)';
+                    navbar.style.backdropFilter = 'blur(25px)';
+                    navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                    navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
